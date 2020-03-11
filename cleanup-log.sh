@@ -34,7 +34,7 @@ then
 fi
 
 # Save the last section of messages log file.
-tail -n $lines messages > mesg.tmp
+tail -n ${lines} messages > mesg.tmp
 mv mesg.tmp messages
 
 cat /dev/null > wtmp
