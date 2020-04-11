@@ -1,0 +1,56 @@
+#!/bin/bash
+# Comparison Operations
+# Rather than executing commands line by line, we create scripts
+# and logic operations is one the primary things we can incorporate
+# into what we are doing. Let check some examples.
+#
+# We accomplish this with square brackets. [[ expresion ]]
+# IMPORTANT: there most be an space between the set of brackets and
+# and the expression.
+#
+# The expression returns 1 for FALSE and 0 for TRUE
+
+# Comparison Operations
+#
+# Less than                 [[ $a < $b ]]
+# Greater than              [[ $a > $b ]]
+# Less than or equal to     [[ $a <= $b ]]
+# Greater than or equal to  [[ $a >= $b ]]
+# Equal                     [[ $a == $b ]]
+# Not equal                 [[ $a != $b ]]
+
+[[ "cat" == "cat" ]]
+echo $?     # Returns 0 for TRUE or SUCCESS
+
+[[ "cat" = "dog" ]]
+echo $?     # Returns 1 for FALSE or FAIL
+
+[[ 20 -gt 100 ]]
+echo $?     # Returns 0 because the integers get threated as string
+            # When working with integers, the operatirs are different.
+
+# Comparison Operators
+#
+# Less than                 [[ $a -lt $b ]]
+# Greater than              [[ $a -gt $b ]]
+# Less than or equal to     [[ $a -le $b ]]
+# Greater than or equal to  [[ $a -ge $b ]]
+# Equal                     [[ $a -eq $b ]]
+# Not equal                 [[ $a -ne $b ]]
+
+# Logic Operators
+#
+# Logical AND   [[ $a && $b ]]
+# Logical OR    [[ $a || $b ]]
+# Logical NOT   [[ ! $a ]]
+
+# String null Value
+#
+# is null?      [[ -z $a ]]
+# is not null?  [[ -n $a ]]
+
+# AND Operator Example
+a=""
+b="cat"
+[[ -z $a && -n $b ]]
+echo $?     # Returns 0 because a is null and b is not.
