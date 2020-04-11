@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# To do arithmetic operations you need to 
+# close the expression in double parenthesis (( ))
+# Example: val=$(( expression ))
+
+# Arithmetic Operators supported by Bash
+# Exponential       $a ** $b
+# Multiplication    $a * $b
+# Division          $a / $b
+# Modulo            $a % $b
+# Addition          $a + $b
+# Subtraction       $a - $b
+
+# If you don't have the double parenthesis around an expression
+# the script will concatinate the expressions when you use plus
+# equal assignments. For example: r+=5 rather than ((r+=5))
+#   The script will threat it as string. 
+
+# Addition example
+a=5
+r=$((a+7))  # 5 + 7
+echo $r
+
+((r++))     # Increment the value of r by 1
+echo $r
+
+((r--))     # Decrement the value of r by 1
+echo $r
+echo
+((r+=5))    # Incrememnts the value of r by 5
+echo $r
+
+((r*=2))    # r time = 2
+echo $r     
+
+((r/=2))    # r divided = 2
+echo $r
+
+((r-=2))    # r minus = 2
+echo $r
+
+# FLOATING POINT
+# NOTE: Bash does not support floating point numbers only integers.
+#       To work with floating numbers, you will need to use the bc program
+#       Example:
+f=$((1/3))                # not using the bc program
+echo $f
+
+g=$(echo 1/3 | bc -l)     # using the bc program. Note here you don't need to use double parenthesis
+echo $g
+
+# NOTE: IF you are doing a lot of math, you might want to use something else other than Bash.
