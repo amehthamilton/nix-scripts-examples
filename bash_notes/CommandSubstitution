@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Command substitution - Example 1
+# Print the working directory.
+#
+cwdir=$(pwd)    # Command substitution of pwd
+echo $cwdir     # Prints the absolute path of the current working directory
+
+d=pwd
+echo $d     # Prints pwd as string
+
+cwdir2=`pwd`    # Another way of command substitution
+echo $cwdir2    # Prints the absolute path of the current working directory
+
+# Command substitution - Example 2
+#
+# find out how long it takes to get a response from google.com
+a=$(ping -c 1 google.com | grep 'bytes from' | cut -d = -f 4)
+echo "The ping was $a"
