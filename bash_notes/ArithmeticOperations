@@ -48,6 +48,7 @@ f=$((1/3))                # not using the bc program
 echo $f
 
 g=$(echo 1/3 | bc -l)     # using the bc program. Note here you don't need to use double parenthesis
-echo $g
+echo $g                   #+ the -l option defines the standard math library.
 
+# The bc program is an arbitraty precision calculator language
 # NOTE: IF you are doing a lot of math, you might want to use something else other than Bash.
