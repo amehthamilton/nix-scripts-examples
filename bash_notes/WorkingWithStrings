@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Concatinating Strings
+a="Hello"
+b="Terminal"
+c=$a$b
+echo $c       # Prints HelloTerminal
+
+# Finding out how long a variable is
+echo ${#a}      # Prints the length of a
+echo ${#b}      # Prints the length of b
+echo ${#c}      # Prints the length of a and b
+
+# Print a substring of an existing string.
+d=${c:2}
+echo $d
+
+e=${c:2:5}
+echo $e     # Starting from the second letter print 5 
+            #+ letters of the value of c
+
+echo ${c: -4}   # Prints 4 letters from the end of the string
+echo ${c: -4:3} # Prints first 3 letters of the last 4 letters.
